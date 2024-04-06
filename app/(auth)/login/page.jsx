@@ -5,7 +5,6 @@ import { signIn, useSession} from "next-auth/react";
 import { useRouter } from "next/navigation";
 const LoginPage = () => {
   const { data, status } = useSession();
-  console.log(data, status);
   const router = useRouter();
 
   if (status === 'authenticated') {
@@ -29,7 +28,7 @@ const LoginPage = () => {
               placeholder="password"
               className="border py-1 px-2"
             />
-            <button className="text-align-left border w-20 rounded bg-blue-500 opacity-85 cursor-pointer">
+            <button className="text-align-left border w-20 rounded bg-blue-500 opacity-85 cursor-pointer text-white">
               Login
             </button>
           </form>

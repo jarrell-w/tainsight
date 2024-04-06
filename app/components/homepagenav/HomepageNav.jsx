@@ -1,14 +1,13 @@
-"use client";
+"use client"
 import NavLinks from "../navlinks/NavLinks";
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import GetUsername from "../getusername/page";
+import { getUserRole } from "@/lib/data";
 
-const HomepageNav = () => {
-  const { data: session } = useSession();
-
+const HomepageNav = ({user, usersRole}) => {
   let isLoggedIn;
-  if (session) {
+  if (user) {
     isLoggedIn = true;
   } else {
     isLoggedIn = false;
@@ -18,18 +17,18 @@ const HomepageNav = () => {
     <nav className="flex justify-between py-3 px-3">
       <div className="cursor-pointer">
         <Link href="/" className="font-bold text-lg">
-          Ta Insight
+          TA Insight
         </Link>
       </div>
       <div className="">
-        <NavLinks></NavLinks>
+        <NavLinks usersRole={usersRole} user={user}></NavLinks>
       </div>
       <div>
         {isLoggedIn ? (
           <div className="flex gap-4">
             <div className="font-bold text-lg flex gap-2">
               <span>Hi,</span>
-              <GetUsername></GetUsername>
+              <GetUsername user={user}></GetUsername>
             </div>
             <div
               className="font-bold text-lg cursor-pointer"

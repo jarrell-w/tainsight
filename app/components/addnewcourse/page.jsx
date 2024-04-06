@@ -1,6 +1,11 @@
 import { addCourse } from "@/lib/addcourseaction"
+import { authOptions } from "@/lib/auth"
+import { getProfessorID } from "@/lib/data"
+import { getServerSession } from "next-auth"
 
-const AddNewCourse = () => {
+const AddNewCourse = async () => {
+    const session = await getServerSession(authOptions)
+    const professorID = await getProfessorID(session.user.email)
   return (
     <div className="text-center max-w-64 mx-10">
         <h1 className="my-5 text-xl font-bold text-gray-800">
@@ -20,6 +25,15 @@ const AddNewCourse = () => {
             name="code"
             required
             className="border-2 border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md p-1 w-full max-w-md outline-none transition duration-200 ease-in-out"
+          ></input>
+          <input
+            type="text"
+            placeholder="professorID"
+            name="professor"
+            value={`${professorID}`}
+            readOnly
+            required
+            className="hidden border-none background-bg-white"
           ></input>
           <button
             type="submit"
