@@ -1,6 +1,6 @@
 Current State:
 
-<img src="https://gifyu.com/image/SeCan"/>
+<img src="https://gifyu.com/image/SeCan" width=400 height=300/>
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
