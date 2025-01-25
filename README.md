@@ -1,6 +1,8 @@
 Current State:
 
-<a href="https://gifyu.com/image/SeCan"><img src="https://s13.gifyu.com/images/SeCan.gif" width=400 height=300/></a>
+<a href="https://gifyu.com/image/SeCan"><img src="https://s13.gifyu.com/images/SeCan.gif" width=400 height=300/></a><br/>
+
+## Note
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
